@@ -1,13 +1,221 @@
-body {
+html, body, #map {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  background-color: #fff;
+  height: 80px;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 0.5rem;
+}
+
+.navbar-brand {
+  font-weight: 500;
+  color: #31304D;
+  font-size: 24px;
+  transition: 0.3s color;
+}
+
+.map-button {
+  background-color: #31304D;
+  color: white;
+  font-size: 18px;
+  padding: 8px 45px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.map-button:hover {
+  background-color: #161A30;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: black;
+}
+
+.leaflet-verticalcenter {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translateY(-50%);
+  top: 135px;
+  padding-left: 12px;
+}
+
+.leaflet-verticalcenter .leaflet-control {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #31304D;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before, .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #map {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 431px) {
+  .logo.png {
+    width: 50px;
+    height: 40px;
+  }
+
+  .map-button {
+    font-size: 12px;
+    padding: 4px 25px;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 350px) {
+  .navbar {
+    background-color: #fff;
+    height: 120px;
+  }
+
+  .leaflet-verticalcenter {
+    top: 165px;
+    padding-left: 1rem;
+  }
+
+  .map-button {
+    position: absolute;
+    top: 90px;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+  }
+}
+
+.info {
+  background: #fff;
+  position: absolute;
+  width: 260px;
+  top: 10px;
+  right: 10px;
+  border-radius: 2px;
+}
+
+.info .item {
+  display: block;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.info .item small {
+  color: #888;
+}
+
+.info .item:hover,
+.info .item.active {
+  background: #f8f8f8;
+}
+
+.info .item:last-child {
+  border-bottom: none;
+}
+
+.leaflet-popup-content {
+  width: 240px;
+}
+
+.tabs {
+  position: relative;
+  min-height: 200px;
+  clear: both;
+  margin: 25px 0;
+}
+
+.tab {
+  float: left;
+  display: none;
+}
+
+.tab:first-of-type {
+  display: inline-block;
+}
+
+.tabs-link {
+  position: relative;
+  top: -14px;
+  height: 20px;
+  left: -40px;
+}
+
+.tab-link {
+  background: #eee;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  position: relative;
+  list-style-type: none;
+  left: 9px;
+  top: 1px;
+  cursor: pointer;
+}
+
+.tab-link {
+  background: #f8f8f8;
+}
+
+.content {
+  background: white;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.tab:target {
+  display: block;
 }
