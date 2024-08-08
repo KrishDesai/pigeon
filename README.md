@@ -1,6 +1,7 @@
 # Pigeon
 
 Pigeon is a news aggregation site that offers readers news by citing academic sources with limited conflict of interest to mitigate bias in media.
+![pigeon](https://github.com/user-attachments/assets/93f90740-1540-4152-ae40-dec94acd74b8)
 
 ## Available Scripts
 
